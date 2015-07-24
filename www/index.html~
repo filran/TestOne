@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        
+		<script type="text/javascript" charset="utf-8">
+			//*********************************************************
+			// Espere o Cordova Carregar
+			//*********************************************************
+			document.addEventListener("deviceready", onDeviceReady, false);
+			function onDeviceReady() {
+				//$("#content").html("Hello, World! Demo  JQuery Mobile com PhoneGap 2!");
+			}
+		</script>
+		
+    </head>
+    
+    <body>        
+		<div data-role="page" id="main-page" data-title="Meu primeiro app" data-theme="a">		
+			<div data-role="header" id="main-header" data-position="fixed">
+				<a href="#menu" class="jqm-navmenu-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-bars ui-nodisc-icon ui-alt-icon ui-btn-left">Menu</a>
+				<h1>Campanhas</h1>
+			</div>
+
+			<div data-role="main" class="ui-content">								
+				<table data-role="table" id="campanha-table" data-mode="reflow" class="ui-responsive movie-list">
+				  <thead>
+					<tr>
+					  <th data-priority="1"></th>
+					  <th data-priority="2"></th>
+					</tr>
+				  </thead>
+				  <tbody>
+					<tr>
+					  <td><img src="img/camp1.jpg"/></td>
+					  <td><img src="img/camp1.jpg"/></td>
+					</tr>
+					<tr>
+					  <td><img src="img/camp1.jpg"/></td>
+					  <td><img src="img/camp1.jpg"/></td>
+					</tr>
+					<tr>
+					  <td><img src="img/camp1.jpg"/></td>
+					  <td><img src="img/camp1.jpg"/></td>
+					</tr>
+					<tr>
+					  <td><img src="img/camp1.jpg"/></td>
+					  <td><img src="img/camp1.jpg"/></td>
+					</tr>
+					<tr>
+					  <td><img src="img/camp1.jpg"/></td>
+					  <td><img src="img/camp1.jpg"/></td>
+					</tr>
+				  </tbody>
+				</table>				
+			</div>
+
+			<div data-role="panel" data-position="left" data-position-fixed="true" data-display="overlay" data-theme="b" id="menu">
+				<ul data-role="listview" data-autodividers="false">
+				  <li><a href="#" data-rel="close">Início</a></li>		  
+				  <li><a href="#">Campanhas</a></li>
+				  <li><a href="#">Homens</a></li>			  
+				  <li><a href="#">Mulheres</a></li>			  
+				  <li><a href="#">Esportes</a></li>			  
+				  <li><a href="#">Favoritos</a></li>			  
+				  <li><a href="#">Minha Conta</a></li>			  
+				  <li><a href="#">Ajuda</a></li>			  
+				  <li><a href="#">Entrar</a></li>			  
+				</ul>
+			</div>			
+		</div>		
+
+
+		<!--SCRIPTS-->		
+		<!--JQuery-->	
+		<script type="text/javascript" charset="utf-8" src="jquery/jquery-2.1.4.js"></script>
+		<script type="text/javascript" charset="utf-8" src="jquery/jquery.mobile-1.4.5.min.js"></script>
+		<script type="text/javascript" charset="utf-8" src="jquery/jquery-ui.min.js"></script>
+		<link href="jquery/jquery.mobile-1.4.5.min.css" rel="stylesheet">
+
+		<link href="css/default.css" rel="stylesheet">
+		
+		<!--PhoneGap-->
+        <script src="phonegap.js"></script>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+
+        <!--Jquery Escritos-->
+        <script type="text/javascript">
+    	$(document).on("pagecreate","#main-page",function(){
+			
+    	});
+        </script>        
+    </body>
+</html>
