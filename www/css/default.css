@@ -1,20 +1,3 @@
-@media screen (min-width: 40em) {
-
-	/* Show the table header rows and set all cells to display: table-cell */
-	.my-custom-breakpoint td, .my-custom-breakpoint th, .my-custom-breakpoint tbody th, .my-custom-breakpoint tbody td, .my-custom-breakpoint thead td, .my-custom-breakpoint thead th {
-		display: table-cell;
-		margin: 0;
-		margin: 0;
-	    padding: 0;
-	}
-	/* Hide the labels in each cell */
-	.my-custom-breakpoint td .ui-table-cell-label, .my-custom-breakpoint th .ui-table-cell-label {
-		display: none;
-		margin: 0;
-	    padding: 0;
-	}
-}
-
 body{
 	margin:0;
 	padding:0;
@@ -28,6 +11,51 @@ img{
     padding: 0;
 }
 
+.ui-input-search
+{
+    /*float:right;*/
+}
+
+/*SLIDER DOS PRODUTOS*/
+	.swiper-container {
+	    width: 100%;
+	    height: auto;
+	} 
 
 
+/*TBODY PROD CAMP*/
+	#tbody-prod-camp #img{
+		position: relative;
+	}
+
+	#tbody-prod-camp #desconto{	  
+		position: absolute;
+		right: 0;
+		width: 40%;
+	}
+
+	#tbody-prod-camp #valor-desconto{
+		text-align: center;
+		/*font-weight: bold;*/
+	}
+
+	#tbody-prod-camp #marca, #produto, #preco_antigo, #preco_atual{
+		text-align: center;
+	}
+
+	#tbody-prod-camp #marca{
+		font-weight: bold;
+	}
+
+	#tbody-prod-camp #marca #produto , #preco_atual{
+		/*font-weight: bold;*/
+	}
+
+	#tbody-prod-camp #produto, #preco_antigo{
+		color: gray;
+	}
+
+	#tbody-prod-camp #preco_antigo{
+		/*text-decoration: line-through;*/
+	}
 

@@ -21,7 +21,7 @@
     
     <body>        
 		<div data-role="page" id="main-page" data-title="Meu primeiro app" data-theme="a">		
-			<div data-role="header" id="main-header" data-position="fixed">
+			<div data-role="header" id="main-header" data-position="fixed" data-theme="b">
 				<a href="#menu" class="jqm-navmenu-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-bars ui-nodisc-icon ui-alt-icon ui-btn-left">Menu</a>
 				<h1>Campanhas</h1>
 			</div>

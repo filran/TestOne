@@ -20,13 +20,14 @@
     </head>
     
     <body>        
-		<div data-role="page" id="main-page" data-title="Meu primeiro app" data-theme="a">		
-			<div data-role="header" id="main-header" data-position="fixed">
-				<a href="#menu" class="jqm-navmenu-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-bars ui-nodisc-icon ui-alt-icon ui-btn-left">Menu</a>
-				<h1>Campanhas</h1>
+		<div data-role="page" id="main-page" data-title="Meu primeiro app" data-position="fixed" data-theme="a">		
+			<div data-role="header" id="main-header" data-position="fixed" data-theme="b">
+				<a href="#menu" data-icon="bars" data-iconpos="notext">Menu</a>
+				<a href="#search-page" data-transition="fade" id="search" data-icon="search" data-iconpos="notext">Search</a>
+				<h1>Cabeçalho</h1>
 			</div>
 
-			<div data-role="main" class="ui-content">								
+			<div data-role="main" class="ui-content" id="content-main-page">
 				<table data-role="table" id="campanha-table" data-mode="reflow" class="ui-responsive movie-list">
 				  <thead>
 					<tr>
@@ -34,28 +35,7 @@
 					  <th data-priority="2"></th>
 					</tr>
 				  </thead>
-				  <tbody>
-					<tr>
-					  <td><img src="img/camp1.jpg"/></td>
-					  <td><img src="img/camp1.jpg"/></td>
-					</tr>
-					<tr>
-					  <td><img src="img/camp1.jpg"/></td>
-					  <td><img src="img/camp1.jpg"/></td>
-					</tr>
-					<tr>
-					  <td><img src="img/camp1.jpg"/></td>
-					  <td><img src="img/camp1.jpg"/></td>
-					</tr>
-					<tr>
-					  <td><img src="img/camp1.jpg"/></td>
-					  <td><img src="img/camp1.jpg"/></td>
-					</tr>
-					<tr>
-					  <td><img src="img/camp1.jpg"/></td>
-					  <td><img src="img/camp1.jpg"/></td>
-					</tr>
-				  </tbody>
+				  <tbody id="tbody-campanhas"></tbody>
 				</table>				
 			</div>
 
@@ -72,7 +52,68 @@
 				  <li><a href="#">Entrar</a></li>			  
 				</ul>
 			</div>			
-		</div>		
+		</div>	
+
+		<!--PAGE = SEARCH-->
+		<div data-role="page" id="search-page" data-title="Pesquisar" data-position="fixed" data-theme="a">		
+			<div data-role="header" id="search-header" data-position="fixed" data-theme="b">
+				<input type="search" data-theme="a" name="search" data-mini="true" data-inline="true" id="search-basic" value="" autofocus />
+			</div>			
+
+			<div data-role="main" id="search-main" class="ui-content"></div>
+		</div>	
+
+		<!--PAGE = PRODUTOS DA CAMPANHA-->
+		<div data-role="page" id="prod-camp-page" data-title="Produtos" data-position="fixed" data-theme="a">		
+			<div data-role="header" id="prod-camp-header" data-position="fixed" data-theme="b"></div>			
+			<div data-role="main" id="prod-camp-main" class="ui-content">
+				<div id="img-campanha"></div>
+				<table data-role="table" id="prod-camp-table" data-mode="" class="ui-responsive movie-list">
+				  <thead>
+					<tr>
+					  <th></th>
+					  <th></th>
+					</tr>
+				  </thead>
+				  <tbody id="tbody-prod-camp">
+				  	<!-- <tr>
+				  		<td>
+				  			<div id="img">
+				  				<div id="desconto"><div id="valor-desconto">-6%</div></div>
+				  				<img src="http://localhost/nusoap/img/camisa.jpg" />
+			  				</div>
+				  			<div id="marca">QuikSilver</div>
+				  			<div id="produto">Camiseta Quiksilver</div>
+				  			<div id="preco_antigo">R$ 89,90</div>
+				  			<div id="preco_atual">R$ 79,90</div>
+			  			</td>
+				  	</tr> -->
+				  </tbody>
+				</table>
+			</div>
+		</div>	
+
+
+		<!--PAGE = DETALHES DO PRODUTO-->
+		<div data-role="page" id="prod-page" data-title="Produto" data-position="fixed" data-theme="a">		
+			<div data-role="header" id="prod-header" data-position="fixed" data-theme="b"></div>			
+			<div data-role="main" id="prod-main" class="ui-content">
+				<div id="imgs-prod">
+					<div class="swiper-container">
+					  <div class="swiper-wrapper">
+					      <!-- <div class="swiper-slide"><img src="http://localhost/nusoap/img/camisa2.jpg"></div>
+					      <div class="swiper-slide"><img src="http://localhost/nusoap/img/camisa2.jpg"></div>
+					      <div class="swiper-slide"><img src="http://localhost/nusoap/img/camisa2.jpg"></div> -->
+					  </div>
+				      <div class="swiper-pagination"></div>
+					</div>
+				</div>
+				<div id="nome-prod">Marca - Nome do produto</div>
+				<div id="preco-prod"><span id="preco">R$ 89,90</span><span id="parcelamento"> até 2x de 45,90</span></div>
+				<p>Detalhes do produto</p>
+				<div id="detalhes">Aqui vem os detalhes do produto aberto.</div>
+			</div>
+		</div>
 
 
 		<!--SCRIPTS-->		
@@ -82,7 +123,22 @@
 		<script type="text/javascript" charset="utf-8" src="jquery/jquery-ui.min.js"></script>
 		<link href="jquery/jquery.mobile-1.4.5.min.css" rel="stylesheet">
 
+		<!-- Do APP -->
+		<script type="text/javascript" charset="utf-8" src="js/config.js"></script>
+		<script type="text/javascript" charset="utf-8" src="js/functions.js"></script>
+		
+			<!--  -->
+			<script type="text/javascript" charset="utf-8" src="js/plugins/Swiper-master/dist/js/swiper.jquery.min.js"></script>
+			<link href="js/plugins/Swiper-master/dist/css/swiper.min.css" rel="stylesheet">
+
+
+
+
 		<link href="css/default.css" rel="stylesheet">
+		<link href="css/media.css" rel="stylesheet">
+
+		<!-- PLUGINS -->
+		<script type="text/javascript" charset="utf-8" src="js/plugins/fittext/jquery.fittext.js"></script>
 		
 		<!--PhoneGap-->
         <script src="phonegap.js"></script>
@@ -91,9 +147,77 @@
 
         <!--Jquery Escritos-->
         <script type="text/javascript">
+
+        //carrega a página principal
     	$(document).on("pagecreate","#main-page",function(){
 			
+			lista_campanhas();
+
+			//enviando ID da campanha
+			$(document).on('click', '.img-campanha', function(){     
+		        // store some data
+		        if(typeof(Storage)!=="undefined") {
+		              localStorage.id_campanha  = $(this).attr("idcampanha");   
+		              localStorage.img_campanha = $(this).children().attr("src");
+		        }
+		        // Change page
+		        $.mobile.changePage("#prod-camp-page");
+		    });
+
     	});
+
+
+
+    	//carrega a página de pesquisa
+    	$(document).on('pagebeforeshow', '#search-page', function(){       
+		     $("#search-basic").focus();
+		});
+
+
+
+    	//carrega a página que lista os produtos de uma campanha
+    	$(document).on('pagebeforeshow', '#prod-camp-page', function(){       
+		    // alert( localStorage.id_campanha ); 
+		    // alert( localStorage.img_campanha );
+
+		    $("#img-campanha").html("<img src='"+localStorage.img_campanha+"' />");
+		    
+		    lista_produtos_campanha(localStorage.id_campanha);
+
+		    $(document).on('click', '#tbody-prod-camp tr td', function(){ 
+		    	if( $(this).attr("qtd-prod") == 0 )
+		    	{
+
+		    	}else
+		    	{
+					if(typeof(Storage)!=="undefined") {
+			              localStorage.id_produto  = $(this).attr("id-produto");   
+			        }
+			        // Change page
+			        $.mobile.changePage("#prod-page");
+		    	}
+		    });
+		});
+
+
+		$(document).on('pagebeforeshow', '#prod-page', function(){    
+			lista_produto(localStorage.id_produto);
+
+			$(document).ready(function () {
+			    //initialize swiper when document ready  
+			    var mySwiper = new Swiper ('.swiper-container', {
+			      // Optional parameters
+			      	pagination: '.swiper-pagination',
+			        paginationClickable: true
+			    })        
+			  });			
+		});	
+
+		$(document).on('pageshow','#prod-page' , function(){
+							
+		});
+
+
         </script>        
     </body>
 </html>
